@@ -44,12 +44,15 @@ Open DACS app often implement caching of user permission profiles.
 Both kind of apps may choose to implement custom caches based on the specific requirements of an application.  OpenDACS app is more likely to impelement custom caching.
 
 Content list command (getPEList Open DACS method and contentList command in ODPS) can be run per user to return the list of assigned PEs (for content-based services).  To clarify, here is an example of this information:
+
 SUCCESS:1 2 3 4 6 7 8 18 20 62
 
 This info can be cached.
 
 Subscription list command (detSubscriptionList Open DACS method and subscriptionList command in ODPS) can be run per user to return a list of assigned subscriptions (for subject-based services) To clarify, here is an example of this information:
+
 \*.O
+
 Also, when item subscription is established, if it's content-based, PEs can be found in PROD_PERM FID.
 
 The performance for subscription test on ODPS is roughly 20K operations per second.  Thus, running it on every subscription request is not efficient, for some applications it's not sufficcient (they require more frequent checks), and this command also generates dacs usage events.  Which makes caching a very popular approach.
