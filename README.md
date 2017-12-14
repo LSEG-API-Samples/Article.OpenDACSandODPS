@@ -66,7 +66,8 @@ The most common ODPS and OpenDACS actions are *content list retrieval per user, 
 Entitlement check is based on item name that makes up "subject".  The entitlement checks available for this type of service are on subject, that is expressed as RIC name, for example, "TRI.N", "GOOG.O" or wild-carded RIC name convention,f or example "*.N"  
 The most common ODPS and OpenDACS actions are: *subscription list (usually returning wild-card answers such as "\*.N", getSubscriptionList OpenDACS function and subscriptionList ODPS command) *subscription test (accepting instrument as input and returning positive or negative answer as output, checkSubscription OpenDACS method and subscriptionTest ODPS command)
 
-#### Service Level AuthorizationUser can be either entitled or not entitled to service as a whole.  This is the simplest, but least flexible type of permissioning.
+#### Service Level Authorization
+User can be either entitled or not entitled to service as a whole.  This is the simplest, but least flexible type of permissioning.
 
 ## Redundant Solution
 
@@ -75,9 +76,11 @@ OpenDACS applications implement redundancy according to requirements of the spec
 
 ## Tools
 
-#### DACS UIDACS UI is a tool that may or may not be directly accessible to a developer.  This is a graphical user interface for DACS administration, used by DACS administrators/market data groups.  It can be used to verify the permissions assigned, prior to retrival by OpenDACS or ODPS.  If it's not directly available, and a confimration of permissions is required, one may request and get the info via DACS administrator who has the access to the DACS UI.
+#### DACS UI
+DACS UI is a tool that may or may not be directly accessible to a developer.  This is a graphical user interface for DACS administration, used by DACS administrators/market data groups.  It can be used to verify the permissions assigned, prior to retrival by OpenDACS or ODPS.  If it's not directly available, and a confimration of permissions is required, one may request and get the info via DACS administrator who has the access to the DACS UI.
 
-#### Web BrowserODPS asseps HTTP requests, that can be originated through a web browser, by typing the request into browser's address bar.  For example:
+#### Web Browser
+ODPS asseps HTTP requests, that can be originated through a web browser, by typing the request into browser's address bar.  For example:
 
 "http://myodps:8088/command=cacheDump"
 
