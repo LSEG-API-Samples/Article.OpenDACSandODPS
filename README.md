@@ -30,7 +30,8 @@ There are two important principles to permissioning that application developer s
 
 ## Caching and Performance
 
-#### DACS Lock Caching DACS Lock Caching is an important for both OpenDACS and ODPS applications.  OpenDACS applications often keeps a cache of locks/PEs, it's up to the application designer to implement this in order to minimize the unnecessary entitlement info retrieval from DACS.ODPS implements caching of locks/PEs out of the box, it is configurable, including "keep forever" but default keep time is 60 minutes.  
+#### DACS Lock Caching 
+DACS Lock Caching is an important for both OpenDACS and ODPS applications.  OpenDACS applications often keeps a cache of locks/PEs, it's up to the application designer to implement this in order to minimize the unnecessary entitlement info retrieval from DACS.ODPS implements caching of locks/PEs out of the box, it is configurable, including "keep forever" but default keep time is 60 minutes.  
 To clarify why this is useful, here is an example of ODPS cache:S,"IDN","TRI.N","L:0301116562c0",FALSES,"IDN","IBM.N","L:03011162c0",FALSES,”IDN”,”EUR=”,”P:&16,34,132”,FALSEWhere column 2 contains the item name and column 4 contains locks/PE lists.
 This caching allows mapping item to PEs or lock without referencing infrastrcuture, performing actual subscription and triggering an actual usage.
 
@@ -51,7 +52,11 @@ Also, when item subscription is established, if it's content-based, PEs can be f
 The performance for subscription test on ODPS is roughly 20K operations per second.  Thus, running it on every subscription request is not efficient, for some applications it's not sufficcient (they require more frequent checks), and this command also generates dacs usage events.  Which makes caching a very popular approach.
 
 ## Service Type Considerations
-How service is defined in DACS is very important when planning a programmatic compliant solution.  The three types of service definition in DACS are:*Content-Based*Subject-Based*Service Level
+
+How service is defined in DACS is very important when planning a programmatic compliant solution.  The three types of service definition in DACS are:
+*Content-Based
+*Subject-Based
+*Service Level
 
 #### Content-Based Service
 Entitlement check is based on Permission Entitity or PE.  Therefore, the OpenDACS API functionality and ODPS requests based on PEs will be available for this type of service. 
@@ -64,6 +69,7 @@ The most common ODPS and OpenDACS actions are: *subscription list (usually retur
 #### Service Level AuthorizationUser can be either entitled or not entitled to service as a whole.  This is the simplest, but least flexible type of permissioning.
 
 ## Redundant Solution
+
 ODPS installations often handle ODPS load-balancing as well as ODPS server failure by imploying network load-balancing solution.  There is configuration option to disable http listening port on failure, so that load-balancing controller will seize sending requests to the failed ODPS.
 OpenDACS applications implement redundancy according to requirements of the specific app. Redundancy is planned and designed as part of the overall application design, it's not included within functionality available from API, its design is up to the application developer/architect. 
 
@@ -76,10 +82,12 @@ OpenDACS applications implement redundancy according to requirements of the spec
 "http://myodps:8088/command=cacheDump"
 
 ## References
+
 + Open DACS DEVELOPERS GUIDE
 + ODPS INSTALL AND DEVELOPERS GUIDE
 
 ## GlossaryAPI         
+
 + Application Programming InterfaceDACS        
 + Data Access Control SystemPE          
 + Permission EntityDACS lock   
