@@ -5,6 +5,7 @@ Open DACS API and Open DACS Permission Server (ODPS) are two ways fo a developer
 
 #### Permissioning
 The goal of permissioning is to control access to data by users. Using an entitlement system, such as Data Access Control System (DACS), user permission profiles can be defined.  Permission profiles define what instruments a user is allowed to access.  Using OpenDACS or Open DACS Permission Server, allowed(entitled) permissions can be verified, and if the requesting user is permissioned for content, then the content is be made available to the user.
+![DACS]( https://github.com/TR-API-Samples/Article.OpenDACSandODPS/blob/master/dacs.gif)
 
 #### Open DACS Overview
 The DACS Authorization API enables a class of applications which require authorization checks to be performed outside the scope of TREP-embedded authorization checks.  It is a "tight" integration option.  Open DACS library is emdedded wihin a custom application, and the application is responsible for making the required entitlement check calls using the library.
