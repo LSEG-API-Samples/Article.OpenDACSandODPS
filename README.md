@@ -8,6 +8,7 @@ The goal of permissioning is to control access to data by users. Using an entitl
 
 #### Open DACS Overview
 The DACS Authorization API enables a class of applications which require authorization checks to be performed outside the scope of TREP-embedded authorization checks.  It is a "tight" integration option.  Open DACS library is emdedded wihin a custom application, and the application is responsible for making the required entitlement check calls using the library.
+![Open DACS Within DACS]( https://github.com/TR-API-Samples/Article.OpenDACSandODPS/blob/master/OpenDACSWithDACS.gif)
 
 #### ODPS Overview
 The Thomson Reuters Open DACS Permission Server (ODPS) complements the existing Open DACS API offering. ODPS allows an application to perform DACS permissioning and generate DACS usage data without having to embed OpenDACS API in the application. Instead, to gain access to all Open DACS API functionality, the application can contact ODPS using the industry standard HTTP 1.1/REST protocol. This is an extrenal, or "loose" integration option, via HTTP request/response.
