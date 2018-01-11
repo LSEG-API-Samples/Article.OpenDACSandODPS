@@ -35,6 +35,7 @@ In order to be compliant, the following checks have to be made:
 * User login test, confirms that a user is entitled, and user's maximum number allowed simultaneous connections is not exceeded.  Should be followed by logout at the end of the usage that is being checked.
 * Subscription test or PE test verifies that a user is entitled to certain items
 * Periodic repremission test verifies that entitlements for a specific user are still valid, and re-requests the entitlements is they are not.
+
 There are two important principles to permissioning that application developer should uphold at all times in order for the application to be compliant:
 * Entitlements should be properly verified, prior to the release of data, as described above 
 * Usage of data should be properly reflected within DACS
