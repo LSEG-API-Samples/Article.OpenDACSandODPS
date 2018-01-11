@@ -47,13 +47,11 @@ DACS Lock Caching is an important for both OpenDACS and ODPS applications.  Ope
 
 To clarify, why this feature is useful, let's look at an example of an ODPS cache:
 
-| Service name | RIC |
-| --- | --- |
-| S,"IDN" | "TRI.N","L:0301116562c0",FALSE |
-| S,"IDN" | "IBM.N","L:03011162c0",FALSE |
-| S,”IDN” | ”EUR=”,”P:&16,34,132”,FALSE |
-
-Where column 2 contains the item name and column 4 contains locks/PE lists.
+| Service name | Item Name | locks/PE list |
+| --- | --- | --- |
+| S,"IDN" | "TRI.N" | "L:0301116562c0",FALSE |
+| S,"IDN" | "IBM.N"| "L:03011162c0",FALSE |
+| S,”IDN” | ”EUR=” | ”P:&16,34,132”,FALSE |
 
 This caching allows mapping item to PEs or lock without referencing infrastructure, performing actual subscription and triggering an actual usage.
 
