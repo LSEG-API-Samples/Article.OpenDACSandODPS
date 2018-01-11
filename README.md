@@ -47,13 +47,13 @@ DACS Lock Caching is an important for both OpenDACS and ODPS applications.  Ope
 
 To clarify, why this feature is useful, let's look at an example of an ODPS cache:
 
-| Service Type | Service name | Item Name | locks/PE list | Non-expirable |
+| Service Type | Service name | Item Name | DACS lock/PE list | Non-expirable |
 | --- | --- | --- | --- | --- |
 | S | "IDN" | "TRI.N" | "L:0301116562c0" | FALSE |
 | S | "IDN" | "IBM.N"| "L:03011162c0" | FALSE |
 | S | ”IDN” | ”EUR=” | ”P:&16,34,132” | FALSE |
 
-This caching allows mapping item to PEs or lock without referencing infrastructure, performing actual subscription and triggering an actual usage.
+This caching allows for mapping of an item to PEs or DACS lock without having to involve the infrastructure, i.e. without  having to issue a request for subscription and trigger a reportable item usage.
 
 #### User Profile Caching
 Open DACS application and ODPS keep track of logged in users and their entitlements.  When user initially logs in, the profile, or what the user is entitled to access are retrieved from DACS. 
