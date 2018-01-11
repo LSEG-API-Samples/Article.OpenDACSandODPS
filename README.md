@@ -44,7 +44,15 @@ There are two important principles to permissioning that application developer s
 
 #### DACS Lock Caching 
 DACS Lock Caching is an important for both OpenDACS and ODPS applications.  OpenDACS applications often keeps a cache of locks/PEs, it's up to the application designer to implement this in order to minimize the unnecessary entitlement info retrieval from DACS.ODPS implements caching of locks/PEs out of the box, it is configurable, including "keep forever" but default keep time is 60 minutes.  
-To clarify why this is useful, here is an example of ODPS cache:S,"IDN","TRI.N","L:0301116562c0",FALSES,"IDN","IBM.N","L:03011162c0",FALSES,”IDN”,”EUR=”,”P:&16,34,132”,FALSEWhere column 2 contains the item name and column 4 contains locks/PE lists.
+
+To clarify, why this feature is useful, let's look at an example of an ODPS cache:
+
+S,"IDN","TRI.N","L:0301116562c0",FALSE
+S,"IDN","IBM.N","L:03011162c0",FALSE
+S,”IDN”,”EUR=”,”P:&16,34,132”,FALSE
+
+Where column 2 contains the item name and column 4 contains locks/PE lists.
+
 This caching allows mapping item to PEs or lock without referencing infrastructure, performing actual subscription and triggering an actual usage.
 
 #### User Profile Caching
