@@ -32,12 +32,12 @@ ODPS client calls ODPS via HTTP, issuing HTTP request and receiving HTTP respons
 
 #### Mandatory Checks
 In order to be compliant, the following checks have to be made:
-*User login, followed by user logout, confirms that a user is entitled, and user's maximum number allowed simultaneous connections is not exceeded.
-*Subscription test or PE test verifies that a user is entitled to certain items
-*Periodic repremission test verifies that entitlements for a specific user are still valid, and re-requests the entitlements is they are not.
+* User login, followed by user logout, confirms that a user is entitled, and user's maximum number allowed simultaneous connections is not exceeded.
+* Subscription test or PE test verifies that a user is entitled to certain items
+* Periodic repremission test verifies that entitlements for a specific user are still valid, and re-requests the entitlements is they are not.
 There are two important principles to permissioning that application developer should uphold at all times in order for the application to be compliant:
-*Entitlements should be properly verified, prior to the release of data, as described above 
-*Usage of data should be properly reflected within DACS
+* Entitlements should be properly verified, prior to the release of data, as described above 
+* Usage of data should be properly reflected within DACS
 
 ## Caching and Performance
 
