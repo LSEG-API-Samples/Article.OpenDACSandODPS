@@ -80,9 +80,12 @@ The performance for subscription test on ODPS is roughly 20K operations per seco
 ## Service Type Considerations
 
 How service is defined in DACS is very important when planning a programmatic compliant solution.  The three types of service definition in DACS are:
-*Content-Based
-*Subject-Based
-*Service Level
+* Service Level
+* Content-Based
+* Subject-Based
+
+#### Service Level Authorization
+User can be either entitled or not entitled to service as a whole.  This is the simplest, but least flexible type of permissioning.   Service level authorization is always present.
 
 #### Content-Based Service
 Entitlement check is based on Permission Entitity or PE.  Therefore, the OpenDACS API functionality and ODPS requests based on PEs will be available for this type of service. 
@@ -92,13 +95,10 @@ The most common ODPS and OpenDACS actions are *content list retrieval per user, 
 Entitlement check is based on item name that makes up "subject".  The entitlement checks available for this type of service are on subject, that is expressed as RIC name, for example, "TRI.N", "GOOG.O" or wild-carded RIC name convention,f or example "*.N"  
 The most common ODPS and OpenDACS actions are: *subscription list (usually returning wild-card answers such as "\*.N", getSubscriptionList OpenDACS function and subscriptionList ODPS command) *subscription test (accepting instrument as input and returning positive or negative answer as output, checkSubscription OpenDACS method and subscriptionTest ODPS command)
 
-#### Service Level Authorization
-User can be either entitled or not entitled to service as a whole.  This is the simplest, but least flexible type of permissioning.
-
 ## Redundant Solution
 
 ODPS installations often handle ODPS load-balancing as well as ODPS server failure by imploying network load-balancing solution.  There is configuration option to disable http listening port on failure, so that load-balancing controller will seize sending requests to the failed ODPS.
-OpenDACS applications implement redundancy according to requirements of the specific app. Redundancy is planned and designed as part of the overall application design, it's not included within functionality available from API, its design is up to the application developer/architect. 
+OpenDACS applications implement redundancy according to requirements of the specific app. Redundancy must be planned and designed as part of the overall application design, it's not included within functionality available from API, its design is up to the application developer/architect. 
 
 ## Tools
 
